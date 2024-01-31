@@ -8,16 +8,24 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform groundChecker;
     [SerializeField] private LayerMask groundLayer;
 
+    [SerializeField] private Transform gunMuzzle;
+    [SerializeField] private GameObject projectile;
+
+    [SerializeField] private float fireRate = .5f;
+
     private Animator animator;
     private Rigidbody2D rigidbody2d;
 
     private bool isFacingRight;
     private bool isGrounded;
 
+    private float nextFire;
+
     private void Start()
     {
         isFacingRight = true;
         isGrounded = false;
+        nextFire = 0f;
         animator = GetComponent<Animator>();
         rigidbody2d = GetComponent<Rigidbody2D>();
     }
@@ -29,6 +37,12 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
             animator.SetBool("isGrounded", false);
             rigidbody2d.AddForce(new(0, jumpHeight));
+        }
+
+        if (Time.time > nextFire && Input.GetAxisRaw("Fire1") != 0)
+        {
+            nextFire = Time.time + fireRate;
+            Instantiate(projectile, gunMuzzle.position, Quaternion.Euler(new(x: 0, y: 0, z: isFacingRight ? 0 : 180)));
         }
     }
 
