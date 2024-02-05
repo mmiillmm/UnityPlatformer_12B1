@@ -12,4 +12,6 @@ public class ProjectileController : MonoBehaviour
             x: transform.rotation.z == 0 ? 1 : -1,
             y: 0) * _projectileSpeed, ForceMode2D.Impulse);
     }
+
+    public void StopMove() => rigidbody2d.velocity = new(0, 0);
 }
