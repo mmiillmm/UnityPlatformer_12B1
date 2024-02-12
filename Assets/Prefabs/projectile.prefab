@@ -5063,4 +5063,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exlposionEffect: {fileID: 4173093769842182076, guid: 8184f6cdbfbd9884cb4dd4c5f4adc977, type: 3}
-  damage: 1
+  damage: 2
