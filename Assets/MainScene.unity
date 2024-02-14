@@ -123,6 +123,25 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &152443900 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4024212804341080425, guid: 0a3eed3e98146bc4b8537b6f917ff361, type: 3}
+  m_PrefabInstance: {fileID: 4272011397288256343}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &152443905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152443900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 992dd1a8bed619f42bb9d52024b540db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  pushForce: 20
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,7 +852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4024212804341080425, guid: 0a3eed3e98146bc4b8537b6f917ff361, type: 3}
       propertyPath: m_Name
-      value: targetDunny2p0
+      value: targetDummy2p0
       objectReference: {fileID: 0}
     - target: {fileID: 8489462730128988645, guid: 0a3eed3e98146bc4b8537b6f917ff361, type: 3}
       propertyPath: m_Sprite
@@ -859,6 +878,7 @@ GameObject:
   - component: {fileID: 1877577012}
   - component: {fileID: 1877577017}
   - component: {fileID: 1877577018}
+  - component: {fileID: 1877577019}
   m_Layer: 0
   m_Name: CHARACTER
   m_TagString: Player
@@ -1084,6 +1104,21 @@ MonoBehaviour:
   gunMuzzle: {fileID: 1993046836}
   projectile: {fileID: 354136032788119623, guid: 5c43ca3f839dfe546b544b243ef036f0, type: 3}
   fireRate: 0.5
+--- !u!114 &1877577019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877577011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cdc2d9c70cd5b34e8d55dde1a5107f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  bloodDropsFX: {fileID: 5546437215537126934, guid: d57b5b2c9b584474bbf206269c97dfd2, type: 3}
+  dmgImmunityRate: 0.5
 --- !u!1 &1993046835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,10 +1259,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: spikeyRock
       objectReference: {fileID: 0}
+    - target: {fileID: 4024212804341080425, guid: 0a3eed3e98146bc4b8537b6f917ff361, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4024212804341080425, guid: 0a3eed3e98146bc4b8537b6f917ff361, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 152443905}
   m_SourcePrefab: {fileID: 100100000, guid: 0a3eed3e98146bc4b8537b6f917ff361, type: 3}
 --- !u!1001 &6003700178943927255
 PrefabInstance:
