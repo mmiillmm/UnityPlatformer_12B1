@@ -10,13 +10,16 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private Slider healthBar;
     [SerializeField] private Image bloodScreen;
     [SerializeField] private float smoothColor = 2f;
+    [SerializeField] private AudioClip playerGrunt;
 
     private float currentHealth;
     private float nextDamage;
     private bool isDamaged;
+    private AudioSource audioSource;
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         currentHealth = maxHealth;
         healthBar.maxValue = maxHealth;
         healthBar.value = maxHealth;
@@ -46,6 +49,7 @@ public class PlayerHealth : MonoBehaviour
             nextDamage = Time.time + dmgImmunityRate;
             Instantiate(bloodDropsFX, transform.position, bloodDropsFX.transform.localRotation);
             currentHealth -= damage;
+            audioSource.PlayOneShot(playerGrunt, 0.6f);
             isDamaged = true;
             healthBar.value = currentHealth;
 
