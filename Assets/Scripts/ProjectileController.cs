@@ -13,5 +13,9 @@ public class ProjectileController : MonoBehaviour
             y: 0) * _projectileSpeed, ForceMode2D.Impulse);
     }
 
-    public void StopMove() => rigidbody2d.velocity = new(0, 0);
+    public void StopMove()
+    {
+        transform.localRotation = Quaternion.Euler(0, 0, -90);
+        rigidbody2d.velocity = new(0, 0);
+    }
 }
