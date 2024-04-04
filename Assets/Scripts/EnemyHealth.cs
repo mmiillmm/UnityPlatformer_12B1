@@ -17,7 +17,6 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         healthBar.gameObject.SetActive(true);
-
         currentHealth -= damage;
         healthBar.value = currentHealth;
         if (currentHealth <= 0) KillMe();
