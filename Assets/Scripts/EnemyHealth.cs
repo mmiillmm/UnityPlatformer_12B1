@@ -5,6 +5,7 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private float maxHealth = 5f;
     [SerializeField] private Slider healthBar;
+    [SerializeField] private GameObject deathFX;
     private float currentHealth;
 
     private void Start()
@@ -24,6 +25,8 @@ public class EnemyHealth : MonoBehaviour
 
     private void KillMe()
     {
-        Destroy(gameObject);
+        Instantiate(deathFX, transform.position, deathFX.transform.localRotation);
+        if (gameObject.transform.parent == null) Destroy(gameObject);
+        else Destroy(gameObject.transform.parent.gameObject);
     }
 }
