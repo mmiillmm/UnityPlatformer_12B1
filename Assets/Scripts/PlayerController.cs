@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float maxSpeed = 7;
+    [SerializeField] private float maxSpeed = 15;
     [SerializeField] private float jumpHeight = 150;
 
     [SerializeField] private Transform groundChecker;
     [SerializeField] private LayerMask groundLayer;
 
     [SerializeField] private Transform gunMuzzle;
-    [SerializeField] private GameObject projectile;
+    //[SerializeField] private GameObject projectile;
 
     [SerializeField] private float fireRate = .5f;
 
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         if (Time.time > nextFire && Input.GetAxisRaw("Fire1") != 0)
         {
             nextFire = Time.time + fireRate;
-            Instantiate(projectile, gunMuzzle.position, Quaternion.Euler(new(x: 0, y: 0, z: isFacingRight ? 0 : 180)));
+            //Instantiate(projectile, gunMuzzle.position, Quaternion.Euler(new(x: 0, y: 0, z: isFacingRight ? 0 : 180)));
         }
     }
 
